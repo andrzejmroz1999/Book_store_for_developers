@@ -1,0 +1,195 @@
+﻿<error errorId="72a4590f-a79e-4fe3-b09b-1afed1cbc879" application="/LM/W3SVC/2/ROOT" host="LAPTOP-PC1SB9ND" type="System.Web.HttpException" message="The controller for path '/Prototype/images/menu.png' was not found or does not implement IController." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): The controller for path '/Prototype/images/menu.png' was not found or does not implement IController.&#xD;&#xA;   w System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)&#xD;&#xA;   w System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)&#xD;&#xA;   w System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   w System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   w System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   w System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   w System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   w System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)&#xD;&#xA;   w System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="andrzejmroz1999@gmail.com" time="2022-02-17T09:16:18.7441391Z" statusCode="404">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:close&#xD;&#xA;HTTP_ACCEPT:image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;HTTP_COOKIE:glimpseOptions=%7B%22glimpsePolicy%22%3Anull%7D; glimpseId=null; glimpsePolicy=; ASP.NET_SessionId=nw4sjhcdsbnvm0xvsdmnahlk; __RequestVerificationToken=Njv9_2KllBanJ4TSjsn0ypXEGB7rVxJ-Dht03ae8dbRuoBNrEr41m7RU0J_tpkqqgiy9fzHuG5pQdw0XRXjtGWLSlBB3fxYd1S2zmxuKq0Y1; .AspNet.ApplicationCookie=0t_2XOafgNIYUP7hJHGfm8hIPSYnF3ZkRCF8anHax-ZobwMy0tIsMGbEmY7DhBOd7T2BzuwojxP_efLpoqoTTyKAP5uetT6TtQl53qhSHOodpO4Jf1Tq_f8Y4Wdua2N5OOiOabRP3AibGW6KR0jR2GwY5itTn85iRi0yeQb5tSea_3T_v7oSskmxaNVFgiv0xNyaa1mYR52fckg6SAcXKcFffxWxn7PsdjMP1U3rm8mPjjpKAh0etmhsXKKkHTG1U43zaZHpAVC1YMjk7GGRmEWIMF2jx-PT0RaNmuUEEmsLDheiLnHpbhEWB6CQDodcm4qXH1loiZOPYE-9hdO1VVdwqpYc4LZdDrV3k-EiaKxjXvTyqXD1fix0jDEzEFQ6ydhUjxzM6upPaFhjTFXvSpwQKViwYBlx_-O67JfpocVcsBD48yCgExHfXFd0v5OyuMNEpbwBBpsnMD6fRRzAevFvFnMU2JsVlOck32kEV7TWNE4WUCua8GU35Q82OTV4hO8JYdyxqwxoNgdl0vmmOA&#xD;&#xA;HTTP_HOST:localhost:44305&#xD;&#xA;HTTP_REFERER:https://localhost:44305/Prototype/account.html&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36&#xD;&#xA;HTTP_SEC_CH_UA:&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;98&quot;, &quot;Google Chrome&quot;;v=&quot;98&quot;&#xD;&#xA;HTTP_SEC_CH_UA_MOBILE:?0&#xD;&#xA;HTTP_SEC_CH_UA_PLATFORM:&quot;Windows&quot;&#xD;&#xA;HTTP_SEC_FETCH_SITE:same-origin&#xD;&#xA;HTTP_SEC_FETCH_MODE:no-cors&#xD;&#xA;HTTP_SEC_FETCH_DEST:image&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: close&#xD;&#xA;Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;Cookie: glimpseOptions=%7B%22glimpsePolicy%22%3Anull%7D; glimpseId=null; glimpsePolicy=; ASP.NET_SessionId=nw4sjhcdsbnvm0xvsdmnahlk; __RequestVerificationToken=Njv9_2KllBanJ4TSjsn0ypXEGB7rVxJ-Dht03ae8dbRuoBNrEr41m7RU0J_tpkqqgiy9fzHuG5pQdw0XRXjtGWLSlBB3fxYd1S2zmxuKq0Y1; .AspNet.ApplicationCookie=0t_2XOafgNIYUP7hJHGfm8hIPSYnF3ZkRCF8anHax-ZobwMy0tIsMGbEmY7DhBOd7T2BzuwojxP_efLpoqoTTyKAP5uetT6TtQl53qhSHOodpO4Jf1Tq_f8Y4Wdua2N5OOiOabRP3AibGW6KR0jR2GwY5itTn85iRi0yeQb5tSea_3T_v7oSskmxaNVFgiv0xNyaa1mYR52fckg6SAcXKcFffxWxn7PsdjMP1U3rm8mPjjpKAh0etmhsXKKkHTG1U43zaZHpAVC1YMjk7GGRmEWIMF2jx-PT0RaNmuUEEmsLDheiLnHpbhEWB6CQDodcm4qXH1loiZOPYE-9hdO1VVdwqpYc4LZdDrV3k-EiaKxjXvTyqXD1fix0jDEzEFQ6ydhUjxzM6upPaFhjTFXvSpwQKViwYBlx_-O67JfpocVcsBD48yCgExHfXFd0v5OyuMNEpbwBBpsnMD6fRRzAevFvFnMU2JsVlOck32kEV7TWNE4WUCua8GU35Q82OTV4hO8JYdyxqwxoNgdl0vmmOA&#xD;&#xA;Host: localhost:44305&#xD;&#xA;Referer: https://localhost:44305/Prototype/account.html&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36&#xD;&#xA;sec-ch-ua: &quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;98&quot;, &quot;Google Chrome&quot;;v=&quot;98&quot;&#xD;&#xA;sec-ch-ua-mobile: ?0&#xD;&#xA;sec-ch-ua-platform: &quot;Windows&quot;&#xD;&#xA;sec-fetch-site: same-origin&#xD;&#xA;sec-fetch-mode: no-cors&#xD;&#xA;sec-fetch-dest: image&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\andrz\Desktop\book store for developers\book store for developers\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="ApplicationCookie" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="andrzejmroz1999@gmail.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="andrzejmroz1999@gmail.com" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="andrzejmroz1999@gmail.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="256" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=localhost" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=localhost" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="256" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=localhost" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=localhost" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Prototype/images/menu.png" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\andrz\Desktop\book store for developers\book store for developers\Prototype\images\menu.png" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="58425" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Prototype/images/menu.png" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="44305" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Prototype/images/menu.png" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="close" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="glimpseOptions=%7B%22glimpsePolicy%22%3Anull%7D; glimpseId=null; glimpsePolicy=; ASP.NET_SessionId=nw4sjhcdsbnvm0xvsdmnahlk; __RequestVerificationToken=Njv9_2KllBanJ4TSjsn0ypXEGB7rVxJ-Dht03ae8dbRuoBNrEr41m7RU0J_tpkqqgiy9fzHuG5pQdw0XRXjtGWLSlBB3fxYd1S2zmxuKq0Y1; .AspNet.ApplicationCookie=0t_2XOafgNIYUP7hJHGfm8hIPSYnF3ZkRCF8anHax-ZobwMy0tIsMGbEmY7DhBOd7T2BzuwojxP_efLpoqoTTyKAP5uetT6TtQl53qhSHOodpO4Jf1Tq_f8Y4Wdua2N5OOiOabRP3AibGW6KR0jR2GwY5itTn85iRi0yeQb5tSea_3T_v7oSskmxaNVFgiv0xNyaa1mYR52fckg6SAcXKcFffxWxn7PsdjMP1U3rm8mPjjpKAh0etmhsXKKkHTG1U43zaZHpAVC1YMjk7GGRmEWIMF2jx-PT0RaNmuUEEmsLDheiLnHpbhEWB6CQDodcm4qXH1loiZOPYE-9hdO1VVdwqpYc4LZdDrV3k-EiaKxjXvTyqXD1fix0jDEzEFQ6ydhUjxzM6upPaFhjTFXvSpwQKViwYBlx_-O67JfpocVcsBD48yCgExHfXFd0v5OyuMNEpbwBBpsnMD6fRRzAevFvFnMU2JsVlOck32kEV7TWNE4WUCua8GU35Q82OTV4hO8JYdyxqwxoNgdl0vmmOA" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:44305" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://localhost:44305/Prototype/account.html" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" />
+    </item>
+    <item name="HTTP_SEC_CH_UA">
+      <value string="&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;98&quot;, &quot;Google Chrome&quot;;v=&quot;98&quot;" />
+    </item>
+    <item name="HTTP_SEC_CH_UA_MOBILE">
+      <value string="?0" />
+    </item>
+    <item name="HTTP_SEC_CH_UA_PLATFORM">
+      <value string="&quot;Windows&quot;" />
+    </item>
+    <item name="HTTP_SEC_FETCH_SITE">
+      <value string="same-origin" />
+    </item>
+    <item name="HTTP_SEC_FETCH_MODE">
+      <value string="no-cors" />
+    </item>
+    <item name="HTTP_SEC_FETCH_DEST">
+      <value string="image" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="glimpseOptions">
+      <value string="%7B%22glimpsePolicy%22%3Anull%7D" />
+    </item>
+    <item name="glimpseId">
+      <value string="null" />
+    </item>
+    <item name="glimpsePolicy">
+      <value string="" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="nw4sjhcdsbnvm0xvsdmnahlk" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="Njv9_2KllBanJ4TSjsn0ypXEGB7rVxJ-Dht03ae8dbRuoBNrEr41m7RU0J_tpkqqgiy9fzHuG5pQdw0XRXjtGWLSlBB3fxYd1S2zmxuKq0Y1" />
+    </item>
+    <item name=".AspNet.ApplicationCookie">
+      <value string="0t_2XOafgNIYUP7hJHGfm8hIPSYnF3ZkRCF8anHax-ZobwMy0tIsMGbEmY7DhBOd7T2BzuwojxP_efLpoqoTTyKAP5uetT6TtQl53qhSHOodpO4Jf1Tq_f8Y4Wdua2N5OOiOabRP3AibGW6KR0jR2GwY5itTn85iRi0yeQb5tSea_3T_v7oSskmxaNVFgiv0xNyaa1mYR52fckg6SAcXKcFffxWxn7PsdjMP1U3rm8mPjjpKAh0etmhsXKKkHTG1U43zaZHpAVC1YMjk7GGRmEWIMF2jx-PT0RaNmuUEEmsLDheiLnHpbhEWB6CQDodcm4qXH1loiZOPYE-9hdO1VVdwqpYc4LZdDrV3k-EiaKxjXvTyqXD1fix0jDEzEFQ6ydhUjxzM6upPaFhjTFXvSpwQKViwYBlx_-O67JfpocVcsBD48yCgExHfXFd0v5OyuMNEpbwBBpsnMD6fRRzAevFvFnMU2JsVlOck32kEV7TWNE4WUCua8GU35Q82OTV4hO8JYdyxqwxoNgdl0vmmOA" />
+    </item>
+  </cookies>
+</error>
