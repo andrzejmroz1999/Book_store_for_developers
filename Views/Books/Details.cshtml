@@ -1,0 +1,47 @@
+﻿@model book_store_for_developers.Models.Book
+@using book_store_for_developers.Infrastructure
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="Left">
+    <div id="Breadcrumb">
+        <img src="@Url.Content("~/Content/images/dommaly.png")" height="50" width="50" />
+        <a href="link">
+            @Html.MvcSiteMap().SiteMapPath()
+        </a>
+        @Html.Action("CategoriesMenu")
+    </div>
+</div>
+
+<div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="@Url.PathBooks(Model.ImageFileName)" alt="" id="ProductImg">
+            @Html.Action("SameCategory")
+
+        </div>
+        <div class="col-2">
+
+            <h1>@Model.BookTitle - @Model.BookAuthor</h1>
+
+
+            <div id="bookPrice">
+                <h2>  Price - @string.Format("{0:0.##}", Model.BookPrice) zŁ</h2>
+            </div>
+            <a href="@Url.Action("AddToCart","Cart", new { id = Model.BookId })" class="btn3">Add to Cart</a>
+            <h3>Book description <i class="fa fa-indent"></i></h3>
+            <br>
+            <p>
+                @Model.BookDescryption
+            </p>
+        </div>
+        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            <a href="@Url.Action("AddBook", "Manage", new { bookId = Model.BookId })" style="margin-top: 20px; font-weight: bold; display: block;">Edytuj</a>
+        }
+    </div>
+</div>
+
+

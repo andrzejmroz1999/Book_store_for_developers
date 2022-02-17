@@ -1,0 +1,146 @@
+﻿@model book_store_for_developers.ViewModels.ManageCredentialsViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+   
+}
+
+<hr />
+<h2 style="margin-bottom: 30px">Your data </h2>
+<div id="Left">
+    <div id="Breadcrumb">
+        <img src="@Url.Content("~/Content/images/dommaly.png")" height="50" width="50" />
+        <a href="link">
+            @Html.MvcSiteMap().SiteMapPath()
+        </a>
+        @Html.Action("CategoriesMenu", "Books")
+    </div>
+</div>
+<section class="small-container cart-page">
+    @using (@Html.BeginForm("ChangeProfile", "Manage"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="text-align: center;">
+            <table id="userdata-address-table">
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.Name, "Name")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.Name)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.Name)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.Surname, "Surname")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.Surname)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.Surname)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.Address, "Address")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.Address)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.Address)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.City, "City")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.City)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.City)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.PostCode, "PostCode")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.PostCode)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.PostCode)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.PhoneNumber, "PhoneNumber")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.PhoneNumber)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.PhoneNumber)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.Email, "Email")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.Email)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.Email)</td>
+                </tr>
+                <tr style="text-align: right;">
+                    <td></td>
+                    <td colspan="3">
+                        <div class="checkbox" style="margin-bottom: 10px;">
+                        </div>
+
+                        <input class="btn4" type="submit" value="Confirm" style="height: 40px; margin-right: 5px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+
+    <hr />
+    <h2 style="margin-bottom: 30px">Change password</h2>
+
+    @using (Html.BeginForm("ChangePassword", "Manage", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="manage-error">
+            @Html.ValidationMessage("password-error", "")
+        </div>
+
+        if (Model.Message.HasValue)
+        {
+            <div class="manage-message">
+                @switch (Model.Message)
+                {
+                    case book_store_for_developers.Controllers.ManageController.ManageMessageId.ChangePasswordSuccess:
+                        @: Password changed successfully!
+                        break;
+                    case book_store_for_developers.Controllers.ManageController.ManageMessageId.Error:
+                        @: Error occured !
+                        break;
+                }
+            </div>
+        }
+
+        <table id="password-table" style="margin-left: 0px; ">
+            <tr>
+                <td>@Html.LabelFor(o => o.ChangePasswordViewModel.OldPassword, "old password:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.ChangePasswordViewModel.OldPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ChangePasswordViewModel.OldPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.ChangePasswordViewModel.NewPassword, "new password:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.ChangePasswordViewModel.NewPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ChangePasswordViewModel.NewPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.ChangePasswordViewModel.ConfirmPassword, "Confirm your password:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.ChangePasswordViewModel.ConfirmPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ChangePasswordViewModel.ConfirmPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr style="text-align: right;">
+                <td></td>
+                <td colspan="3">
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                    </div>
+
+                    <input class="btn4" type="submit" value="Change" style="height: 40px;" />
+                </td>
+            </tr>
+        </table>
+    }
+    </section>
+             @section Scripts
+{
+        <script src="~/Scripts/jquery-3.4.1.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    }
+

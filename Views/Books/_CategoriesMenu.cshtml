@@ -1,0 +1,26 @@
+﻿@model IEnumerable<book_store_for_developers.Models.Category>
+
+
+<div id="contentsCategoryList">
+    <nav class="categoriesVertical">
+        <ul>
+            @foreach(var category in Model)
+                {
+                <li>
+                    <a href="@Url.Action("List", "Books", new { categoryName = category.CategoryName.ToString()})">
+
+                       @category.CategoryName
+                        
+                    </a>
+                </li>
+            }
+
+
+
+        </ul>
+    </nav>
+</div>
+
+
+
+

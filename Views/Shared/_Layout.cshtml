@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="@Url.Content("~/Prototype/style.css")" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    @System.Web.Optimization.Styles.Render("~/Content/themes/base/css")
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="@Url.Content("~/")">Home</a></li>
+                        <li><a href="@Url.Action("StaticPages","Home", new { name = "AboutUs" })">About us</a></li>
+                        <li><a href="@Url.Action("Index","Cart")">Cart </a></li>
+                        <li><a href="@Url.Action("Login","Account")">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="@Url.Action("Index","Cart")">
+
+                    <img src="@Url.Content("~/Content/images/cart.png")" alt="" width="30" height="30" />
+                    (<span id="cart-heading-quantity-items">@Html.Action("DownloadNumberOfCartItems","Cart")</span>)
+                </a>
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div class="row">
+
+
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    
+   
+        </div>
+    
+    <div class="footer">
+    </div>
+
+    @RenderSection("Scripts", required: false)
+
+
+
+
+</body>
+</html>

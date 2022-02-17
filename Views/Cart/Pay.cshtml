@@ -1,0 +1,69 @@
+﻿@model book_store_for_developers.Models.Order
+@{
+    ViewBag.Title = "Pay";
+    Layout = "~/Views/Shared/_RightSectionLayout.cshtml";
+}
+
+@section SectionTitle{
+    Complete your order details
+}
+
+@using (Html.BeginForm("Pay", "Cart"))
+{
+    <table id="checkout-address-table">
+        <tr>
+            <td>@Html.LabelFor(o => o.Name, "Name:")</td>
+            <td>@Html.TextBoxFor(o => o.Name)</td>
+            <td>@Html.ValidationMessageFor(o => o.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(o => o.Surname, "Surname")</td>
+            <td>@Html.TextBoxFor(o => o.Surname)</td>
+            <td>@Html.ValidationMessageFor(o => o.Surname)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(o => o.Address, "Address")</td>
+            <td>@Html.TextBoxFor(o => o.Address)</td>
+            <td>@Html.ValidationMessageFor(o => o.Address)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(o => o.City, "City")</td>
+            <td>@Html.TextBoxFor(o => o.City)</td>
+            <td>@Html.ValidationMessageFor(o => o.City)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(o => o.PostCode, "PostCode")</td>
+            <td>@Html.TextBoxFor(o => o.PostCode)</td>
+            <td>@Html.ValidationMessageFor(o => o.PostCode)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(o => o.PhoneNumber, "PhoneNumber")</td>
+            <td>@Html.TextBoxFor(o => o.PhoneNumber)</td>
+            <td>@Html.ValidationMessageFor(o => o.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(o => o.Email, "Email")</td>
+            <td>@Html.TextBoxFor(o => o.Email)</td>
+            <td>@Html.ValidationMessageFor(o => o.Email)</td>
+        </tr>
+        <tr>
+            <td><label for="Komentarz">Uwagi</label></td>
+            <td>
+                <textarea cols="40" rows="3" name="Komentarz">@Model.Comment</textarea>
+            </td>
+        </tr>
+    </table>
+
+    @Html.ValidationSummary()
+
+    <hr style="margin-bottom: 50px;" />
+
+    
+    <div class="button_container">
+
+        
+        <button type="submit" value="Confirm" class="btn"><span>Confirm</span></button>
+
+    </div>
+}
+

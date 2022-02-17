@@ -1,0 +1,102 @@
+﻿
+@model book_store_for_developers.ViewModels.EditKursViewModel
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+<hr />
+<h2 class="manageHeader">Edycja produktu</h2>
+<div>
+    @if (Model.Confirmation.HasValue && Model.Confirmation.Value)
+    {
+    <div style="text-align: center; margin: 50px;">
+        Changes made successfully!
+    </div>
+    }
+
+    @using (@Html.BeginForm("AddBook", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="error-summary-centered">
+            @Html.ValidationSummary()
+        </div>
+        @Html.HiddenFor(o => o.Book.BookId)
+        @Html.HiddenFor(o => o.Book.DateAdded)
+        @Html.HiddenFor(o => o.Book.ImageFileName)
+
+        <div style="text-align: center;">
+            <table id="albumedit-address-table">
+                <tr>
+                    <td>@Html.LabelFor(o => o.Book.BookAuthor, "Author:")</td>
+                    <td>@Html.TextBoxFor(o => o.Book.BookAuthor)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Book.BookAuthor)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Book.BookTitle, "Book:")</td>
+                    <td>@Html.TextBoxFor(o => o.Book.BookTitle)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Book.BookTitle)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Book.BookDescryption, "Description:")</td>
+                    <td>@Html.TextBoxFor(o => o.Book.BookDescryption)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Book.BookDescryption)</td>
+                </tr>               
+                <tr>
+                    <td>@Html.LabelFor(o => o.Categories, "Category:")</td>
+                    <td>@Html.DropDownListFor(m => m.Book.CategoryId, new SelectList(Model.Categories, "CategoryId", "CategoryName", Model.Categories.First().CategoryId))</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Book.BookPrice, "price:")</td>
+                    <td>@Html.TextBoxFor(o => o.Book.BookPrice)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Book.BookPrice)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Book.Bestseller, "Bestseller:")</td>
+                    <td>@Html.CheckBoxFor(o => o.Book.Bestseller)</td>
+                    <td></td>
+                </tr>
+                @if (ViewBag.EditMode == null || !ViewBag.EditMode)
+                {
+                    <tr>
+                        <td colspan="3">
+                            <div class="upload">
+                                <input type="file" name="file" />
+                            </div>
+                        </td>
+                    </tr>
+                }
+                <tr>
+
+                    <td style="text-align: left">
+                        @if (ViewBag.EditMode)
+                        {
+                            if (Model.Book.Hidden)
+                            {
+                        <a href="@Url.Action("ShowBook", "Manage", new { bookId = Model.Book.BookId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                            Restore
+                        </a>
+                            }
+                            else
+                            {
+                    <a href="@Url.Action("HideBook", "Manage", new { bookId = Model.Book.BookId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                        Delete
+                    </a>
+                            }
+                        }
+                    </td>
+
+
+                    <td style="text-align: right;">
+                        <input type="submit" value="Save" class="submitLink" style="height: 40px; margin-right: 0px; margin-top: 30px; font-weight: bold;" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>
+
+
+

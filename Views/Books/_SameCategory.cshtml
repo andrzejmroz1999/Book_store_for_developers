@@ -1,0 +1,19 @@
+﻿@model IEnumerable<book_store_for_developers.Models.Book>
+@using book_store_for_developers.Infrastructure
+
+<h4>Books from the same category</h4>
+<div class="small-img-row">
+
+    @foreach (var books in Model.ToList())
+    {
+        <div class="small-img-col">
+            <div class="col-2">
+
+                <a href="@Url.Action("Details", "Books", new { id = books.BookId })">
+                    <img src="@Url.PathBooks(books.ImageFileName)" alt="" class="small-img" />
+                </a>
+            </div>
+        </div>
+    }
+
+</div>

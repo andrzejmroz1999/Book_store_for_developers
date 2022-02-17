@@ -1,0 +1,117 @@
+﻿@model IEnumerable<book_store_for_developers.Models.Order>
+@{
+    ViewBag.Title = "ListOrders";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+<div>
+    <hr />
+    <h2 class="manageHeader">Your orders</h2>
+
+    <div>
+        @if (Model.Any())
+        {
+            <table id="zamowienia-table">
+
+                @foreach (var order in Model)
+                {
+                    <tr @if (order.OrderStatus == book_store_for_developers.Models.OrderStatus.New) { <text> class="newOrder" </text> }>
+                        <td>
+                            <strong>Order number:: </strong>@order.OrderId
+                        </td>
+                        <td>
+                            <strong>Data: </strong>
+                            @order.DateAdded.ToString("dd-MM-yyyy")
+                        </td>
+                        <td>
+                            <strong>Order status: </strong><br />
+
+                            @if (ViewBag.UserIsAdmin)
+                            {
+                                using (Html.BeginForm("OrderStatusChange", "Manage"))
+                                {
+                                    @Html.HiddenFor(o => order.OrderId)
+                                    @Html.EnumDropDownListFor(o => order.OrderStatus, new { @class = "OrderStatusChange" })
+                                }
+                            }
+                            else
+                            {
+                                @Html.DisplayFor(o => order.OrderStatus)
+                            }
+                        </td>
+                        <td>
+                            <strong>Shipping details:</strong><br />
+                            @order.Name @order.Surname<br />
+                            @order.Address<br />
+                            @order.PostCode @order.City<br />
+                        </td>
+                        <td>
+                            <strong>Comments: </strong><br />
+                            @order.Comment
+                        </td>
+                        <td>
+                            <strong>Total cost:</strong> @order.OrderValue zł
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <section>
+                                <ul class="TrzyKolumnyList duzaListaKursy-bottom">
+
+                                    @foreach (var orderItem in order.OrderItems)
+                                    {
+                                        <li>
+                                            <article>
+                                                <a class="kursSzczegolyLink" href="@Url.Action("Details", "Books", new { id = orderItem.BookId })">
+                                                    <img class="kurs" src="@Url.Content("~/Content/books/" + orderItem.book.ImageFileName)" />
+                                                    <h1>
+                                                        @orderItem.book.BookAuthor - @orderItem.book.BookTitle<br />
+                                                        <strong>quantity: @orderItem.Quantity, total price: @(orderItem.Quantity * orderItem.PurchasePrice)  zł</strong>
+                                                    </h1>
+                                                </a>
+                                            </article>
+                                        </li>
+                                    }
+                                </ul>
+                            </section>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+                    <!-- nastepne zamowienie -->
+                }
+            </table>
+        }
+        else
+        {
+    <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
+        No orders.
+    </div>
+        }
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+        $(".OrderStatusChange").on('change', function (e) {
+        //e.preventDefault();
+        var f = $(this.form);
+        var tr = f.closest("tr");
+        var action = f.attr("action");
+        var serializedForm = f.serialize();
+        $.post(action, serializedForm).done(function (data) {
+            if (data == '@book_store_for_developers.Models.OrderStatus.New.ToString()') {
+                tr.addClass("newOrder")
+            }
+            else {
+                tr.removeClass("newOrder");
+            }
+          });
+    });
+    </script>
+
+    }

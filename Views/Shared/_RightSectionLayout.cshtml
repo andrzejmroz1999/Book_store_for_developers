@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="Left">
+    <div id="Breadcrumb">
+        <img src="@Url.Content("~/Content/images/dommaly.png")" height="50" width="50" />
+        <a href="link">
+            @Html.MvcSiteMap().SiteMapPath()
+        </a>
+        @Html.Action("CategoriesMenu","Books")
+    </div>
+</div>
+
+<section class="small-container cart-page">
+    <div class="SectionHeader" style="margin-bottom:0px;">
+        <h1>@RenderSection("SectionTitle", required: false)</h1>
+    </div>
+    @RenderBody()
+</section>
+
+@RenderSection("Scripts", required: false)

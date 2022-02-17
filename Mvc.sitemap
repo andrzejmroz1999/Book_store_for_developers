@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+	<mvcSiteMapNode title="Home" controller="Home" action="Index">
+		<mvcSiteMapNode title="Catergories" controller="Books" action="List" dynamicNodeProvider="book_store_for_developers.Infrastructure.CategoriesDetailsDynamicNodeProvider, book store for developers">
+			<mvcSiteMapNode title="Book" controller="Books" action="Details" dynamicNodeProvider="book_store_for_developers.Infrastructure.BooksDetailsDynamicNodeProvider, book store for developers"/>
+		</mvcSiteMapNode>
+		<mvcSiteMapNode title="Cart" controller="Cart" action="Index">
+			<mvcSiteMapNode title="Order data" controller="Cart" action="Pay"/>
+				<mvcSiteMapNode title="Order confirmation" controller="Cart" action="OrderConfirmation"/>
+			<mvcSiteMapNode title="Account" controller="Manage" action="Index">
+			<mvcSiteMapNode title="Registration" controller="Account" action="Register"/>
+			<mvcSiteMapNode title="Login" controller="Account" action="Login"/>
+			<mvcSiteMapNode title="Book edition" controller="Manage" action="AddBook"/>
+			<mvcSiteMapNode title="Your data" controller="Manage" action="Index"/>
+			<mvcSiteMapNode title="Orders" controller="Manage" action="OrdersList"/>
+
+			</mvcSiteMapNode>
+		</mvcSiteMapNode>
+	</mvcSiteMapNode>
+
+</mvcSiteMap>

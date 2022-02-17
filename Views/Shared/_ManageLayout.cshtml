@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" />
+    <link rel="stylesheet" href="@Url.Content("~/Prototype/style.css")" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+
+                <nav>
+                    <ul id="MenuItems">
+                        <li>
+                            <a class="manageLink" href="@Url.Action("Index", "Home")">
+                                Start
+                            </a>
+                        </li>
+                        <li><a class="manageLink" href="@Url.Action("Index", "Manage")">
+                             Your data
+                         </a></li>
+                        
+                        <li>
+                            <a class="manageLink" href="@Url.Action("ListOrders", "Manage")" style="width: 100px">
+                                Orders
+                            </a>
+                        </li>
+                        @if (@User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a class="manageLink" href="@Url.Action("AddBook", "Manage")">
+                                    Add 
+                                </a>
+                            </li>
+                            <li>
+                                <a class="manageLink" href="@Url.Content("~/elmah")">
+                                    Logi
+                                </a>
+                            </li>
+                            <li>
+                                <a class="manageLink" href="@Url.Content("~/hangfire")">
+                                    Jobs
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                </nav>
+
+
+                <a href="@Url.Action("Index","Cart")">
+
+                    <img src="@Url.Content("~/Content/images/cart.png")" alt="" width="30" height="30" />
+                    (<span id="cart-heading-quantity-items">@Html.Action("DownloadNumberOfCartItems", "Cart")</span>)
+                </a>
+                @Html.Partial("_LoginPartial")
+            </div>
+
+            <div class="row">
+
+
+            </div>                                                        
+        </div>
+        
+        </div>
+
+        <div>
+            @RenderBody()
+        </div>
+
+        <div class="footer">
+    </div>
+
+        @RenderSection("Scripts", required: false)
+</body>
+</html>

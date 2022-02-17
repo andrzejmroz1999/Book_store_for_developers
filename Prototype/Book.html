@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/main-logo.png" alt="" / width="125px">
+                    </a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Cart</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html">
+
+                    <img src="images/cart.png" alt="" width="30px" height="30px" />
+                </a>
+                <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+
+    </div>
+    <div id="Left">
+        <div id="Breadcrumb">
+            <img src="Images/dommaly.png" height="50" width="50" />
+            <a href="link">
+                Start > ASP.NET
+            </a>
+            <div id="contentsCategoryList">
+                <nav class="categoriesVertical">
+                    <ul>
+                        <li>
+                            <a href="link">
+
+                                Graphics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="link">
+                                Programming
+                            </a>
+                        </li>
+                        <li>
+                            <a href="link">
+                                Databases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="link">
+                                Servers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="link">
+                                Office
+                            </a>
+                        </li>
+                        <li>
+                            <a href="link">
+                                Security
+                            </a>
+                        </li>
+                        <li>
+                            <a href="link">
+                                Others
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/java.jpg" alt="" id="ProductImg">
+                <h4>Products from the same category</h4>
+                <div class="small-img-row">
+
+                    <div class="small-img-col">
+                        <img src="images/python.jpg" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/jezykC++.jpg" alt=""  class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/językR.jpg" alt=""  class="small-img">
+                    </div>                   
+                </div>
+
+            </div>
+            <div class="col-2">
+                
+                <h1>Java</h1>
+                
+               
+                <input type="number" value="1">
+                <a href="" class="btn3">Add to Cart</a>
+                <h3>Book description <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsu
+                    Lorem Ipsum
+                    Lorem Ipsum
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="footerBook">
+
+    </div>
+
+
+
+
+
+    <script>
+
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        SmallImg[0].onclick = function () {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function () {
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function () {
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function () {
+            ProductImg.src = SmallImg[3].src;
+        }
+    </script>
+
+
+</body>
+
+</html>

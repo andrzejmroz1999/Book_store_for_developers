@@ -1,0 +1,28 @@
+﻿@model IEnumerable<book_store_for_developers.Models.Book>
+@using book_store_for_developers.Infrastructure
+
+
+<div id="SectionCategoryList">
+    <div class="row">
+        <div class="small-container">
+
+            <div class="row">
+                @foreach (var book in Model)
+                {
+                    <div class="col-4">
+                        <a href="@Url.Action("Details", "Books", new { id = book.BookId })">
+                            <img src="@Url.PathBooks(book.ImageFileName)" alt="" />
+                        </a>
+                        <h1>
+                            @book.BookTitle - @book.BookAuthor
+                            <a href="@Url.Action("AddToCart", "Cart", new { id = book.BookId })">
+                                <img src="@Url.Content("~/Content/images/addCart.png")" width="40" height="40" />
+                            </a>
+                        </h1>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

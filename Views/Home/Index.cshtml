@@ -1,0 +1,82 @@
+﻿@model book_store_for_developers.ViewModels.HomeViewModel
+@using book_store_for_developers.Infrastructure
+@{
+    ViewBag.Title = "Book store for developers";
+}
+
+<h2 class="title">Categories</h2>
+
+<div class="categories">
+    <div class="small-container">
+        <div class="row">
+            @foreach (var category in Model.Cagegories)
+            {
+                <div class="col-3">
+                    <a href="@Url.Action("List","Books", new { categoryName = category.CategoryName.ToLower()})">
+                        <img src="@Url.PathIconCategories(category.IconFileName)" alt="" />
+                        <h1>@category.CategoryName</h1>
+                    </a>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<section class="banner">
+</section>
+<div class="small-container">
+    <h2 class="title">Bestsellers</h2>
+    <div class="row">
+        @foreach (var bestsellers in Model.Bestsellers)
+        {
+
+            <div class="col-4">
+                <a href="@Url.Action("Details", "Books", new { id = bestsellers.BookId})">
+                    <img src="@Url.PathBooks(bestsellers.ImageFileName)" alt="" />
+                </a>
+                <h1>
+                    @bestsellers.BookTitle - @bestsellers.BookAuthor
+                    <a href="@Url.Action("AddToCart","Cart", new { id = bestsellers.BookId })">
+                        <img src="@Url.Content("~/Content/images/addCart.png")" width="40" height="40" />
+                    </a>
+                </h1>
+
+            </div>
+
+
+        }
+    </div>
+</div>
+<div class="small-container">
+    <h2 class="title">Lastests books</h2>
+    <div class="row">
+        @foreach (var latest in Model.Latests)
+        {
+
+            <div class="col-4">
+                <a href="@Url.Action("Details", "Books", new { id = latest.BookId})">
+                    <img src="@Url.PathBooks(latest.ImageFileName)" alt="" />
+                </a>
+                <h1>
+                    @latest.BookTitle - @latest.BookAuthor
+                    <a href="@Url.Action("AddToCart","Cart", new { id = latest.BookId })">
+                        <img src="@Url.Content("~/Content/images/addCart.png")" width="40" height="40" />
+                    </a>
+                </h1>
+
+            </div>
+
+
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+﻿@model book_store_for_developers.ViewModels.OrderConfirmationEmail
+Content-Type: text/html; charset=utf-8
+
+<html>
+<body>
+    <div>@Html.EmbedImage("~/content/Images/banner.jpg")</div>
+    
+
+    <p>Dziękujemy!</p>
+    <p>Złożyłeś zamówienie w serwisie Book store for developers.</p>
+    <p>Zamówione pozycje :</p>
+
+    @{
+        IEnumerable<book_store_for_developers.Models.OrderItem> orderItems = Model.OrderItems;
+
+        for (int i = 0; i < orderItems.Count(); i++)
+        {
+            <p>
+                @orderItems.ElementAt(i).book.BookTitle - @orderItems.ElementAt(i).book.BookAuthor
+                - @orderItems.ElementAt(i).book.BookPrice zł. - @orderItems.ElementAt(i).Quantity szt.
+            </p>
+
+        }
+    }
+
+    <p>Prosimy o przelanie kwoty @Model.Value zł, tytułem: "zamówienie nr @Model.OrderNumber" na nasze konto bankowe:</p>
+    <p>Book store for developers Sp. z o.o</p>
+    <p>ul. xyz</p>
+    <p>08-500 Ryki</p>
+    <p>PKO BP 10 0000 0000 0000 0000 0000 </p>
+
+    <p>Zaraz po otrzymaniu środków wyślemy książki.</p>
+    <p>Dziękujemy i zapraszamy ponownie!</p>
+
+
+</body>
+
+</html>
